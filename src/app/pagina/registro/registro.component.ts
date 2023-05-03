@@ -1,10 +1,22 @@
+import { UsuarioDTO } from 'src/app/modelo/usuario-dto';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.css'],
 })
 export class RegistroComponent {
+  usuario: UsuarioDTO;
+  constructor() {
+    this.usuario = new UsuarioDTO();
+  }
 
+  public registrar() {
+    console.log(this.usuario);
+  }
+
+  public sonIguales(): boolean {
+    return this.usuario.password == this.usuario.confirmaPassword;
+  }
 }
