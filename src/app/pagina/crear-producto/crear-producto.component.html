@@ -1,26 +1,33 @@
 <form #f="ngForm" (ngSubmit)="crearProducto()">
   <div>
     <label>Nombre: </label>
-    <input type="text" name="nombre" [(ngModel)]="producto.nombre" required />
+    <input
+      type="text"
+      name="nombre"
+      [(ngModel)]="producto.nombreProducto"
+      required
+    />
   </div>
   <div>
     <label>Descripcion: </label>
     <textarea
       name="descripcion"
-      [(ngModel)]="producto.descripcion"
+      [(ngModel)]="producto.descripcionProducto"
       required
     ></textarea>
   </div>
   <div>
-    <label>Precio: </label>
-    <input type="number" name="precio" [(ngModel)]="producto.precio" required />
-  </div>
-  <div>
     <label>Unidades: </label>
     <input
-      type="number" name="unidades" [(ngModel)]="producto.unidades"
+      type="number"
+      name="unidades"
+      [(ngModel)]="producto.unidadesDisponibles"
       required
     />
+  </div>
+  <div>
+    <label>Precio: </label>
+    <input type="number" name="precio" [(ngModel)]="producto.precioActual" required />
   </div>
   <div>
     <label>Imagen: </label>
